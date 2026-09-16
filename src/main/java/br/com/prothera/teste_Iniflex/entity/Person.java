@@ -2,65 +2,28 @@ package br.com.prothera.teste_Iniflex.entity;
 
 import java.time.LocalDate;
 import java.util.UUID;
+import jakarta.persistence.*;
 
-import org.hibernate.annotations.CreationTimestamp;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-@Entity
-@Table (name = "person")
-public class Person {
-
+@MappedSuperclass
+public abstract class Person {
     @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @Column (length = 100, nullable = false)
+    @Column(nullable = false, length = 100)
     private String name;
 
-     @Column (nullable = false)
-    private LocalDate date_of_birth;
+    @Column(name = "date_of_birth", nullable = false)
+    private LocalDate dateOfBirth;
 
-    @CreationTimestamp
-    private LocalDate created_at;
+    protected Person() {}
 
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
+    protected Person(String name, LocalDate dateOfBirth) {
         this.name = name;
+        this.dateOfBirth = dateOfBirth;
     }
 
-    public LocalDate getDate_of_birth() {
-        return date_of_birth;
-    }
-
-    public void setDate_of_birth(LocalDate date_of_birth) {
-        this.date_of_birth = date_of_birth;
-    }
-
-    public LocalDate getCreated_at() {
-        return created_at;
-    }
-
-    public void setCreated_at(LocalDate created_at) {
-        this.created_at = created_at;
-    }
-
-
-
+    public UUID getId() { return id; }
+    public String getName() { return name; }
+    public LocalDate getDateOfBirth() { return dateOfBirth; }
 }
