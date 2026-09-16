@@ -1,10 +1,9 @@
 package br.com.prothera.teste_Iniflex.entity;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.UUID;
 
-import org.springframework.data.annotation.CreatedDate;
+import org.hibernate.annotations.CreationTimestamp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -21,13 +20,14 @@ public class Person {
     @GeneratedValue (strategy = GenerationType.AUTO)
     private UUID id;
 
-    @Column (length = 100)
+    @Column (length = 100, nullable = false)
     private String name;
 
+     @Column (nullable = false)
     private LocalDate date_of_birth;
 
-    @CreatedDate
-    private LocalDateTime created_at;
+    @CreationTimestamp
+    private LocalDate created_at;
 
     public UUID getId() {
         return id;
@@ -53,11 +53,11 @@ public class Person {
         this.date_of_birth = date_of_birth;
     }
 
-    public LocalDateTime getCreated_at() {
+    public LocalDate getCreated_at() {
         return created_at;
     }
 
-    public void setCreated_at(LocalDateTime created_at) {
+    public void setCreated_at(LocalDate created_at) {
         this.created_at = created_at;
     }
 
