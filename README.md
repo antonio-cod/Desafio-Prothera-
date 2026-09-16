@@ -1,6 +1,6 @@
 # Desafio Iniflex — Gestão de Funcionários
 
-Projeto desenvolvido como solução para o **Teste Prático de Programação da Iniflex**.
+Projeto desenvolvido como solução para o **Teste Prático de Programação da Prothera Tecnologia**.
 
 A aplicação implementa o gerenciamento de funcionários de uma indústria, aplicando conceitos de **Programação Orientada a Objetos**, herança, coleções, persistência de dados, manipulação de datas, cálculos monetários, ordenação, agrupamento e consultas.
 
@@ -285,4 +285,4 @@ Algumas decisões foram adotadas para manter o código organizado e facilitar su
 
 **Antônio Carlos da Cruz**
 
-Projeto desenvolvido como solução para o desafio técnico de programação da **Prothera **.
+Projeto desenvolvido como solução para o desafio técnico de programação da **Prothera Tecnologia**.
